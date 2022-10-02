@@ -96,12 +96,19 @@ public class SpreadsheetAnalyser {
 			return Category.values()[index].getStr();
 		}
 
-		public String getGroup(int key) {
-			if (key >= 6) {
+		public String getGroupStr(int key) {
+			if (key > 6) {
 				return "";
 			}
-			return new StringBuilder().append(getCategory(key)).append(" = ").append(data.get(key).toString())
+			return new StringBuilder()
+					.append(getCategory(key))
+					.append(" = ")
+					.append(getGroup(key).toString())
 					.toString();
+		}
+		
+		private List<String> getGroup(int key) {
+			return data.get(key);
 		}
 
 		public enum Category {

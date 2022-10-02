@@ -44,15 +44,20 @@ public class Main {
 						success = true;
 					}
 				} else if (op == 2) {
-					System.out.println("1 - Mau");
+					System.out.println("1 - Péssimo");
 					System.out.println("2 - Meh");
 					System.out.println("3 - Bom");
 					System.out.println("4 - Ótimo");
 					System.out.println("5 - Actrizes");
 					System.out.println("6 - Produtores");
+					System.out.println("7 - Importantes");
 					int key = sc.nextInt();
 					sc.nextLine();
-					System.out.println(dataMap.getGroup(key - 1));
+					if (key < 1 || key > 7) {
+						System.out.println("WARN: unknown option.");
+					} else {
+						System.out.println(dataMap.getGroupStr(key - 1));
+					}
 				} else if (op == 3) {
 					break;
 				} else {
