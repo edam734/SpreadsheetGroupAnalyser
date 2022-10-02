@@ -97,9 +97,6 @@ public class SpreadsheetAnalyser {
 		}
 
 		public String getGroupStr(int key) {
-			if (key > 6) {
-				return "";
-			}
 			return new StringBuilder()
 					.append(getCategory(key))
 					.append(" = ")
