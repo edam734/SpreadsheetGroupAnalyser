@@ -33,10 +33,10 @@ public class SpreadsheetAnalyser {
 				CellType type = cell.getCellTypeEnum();
 				if (CellType.STRING.equals(type)) {
 					CellAddress address = cell.getAddress();
-					int score = address.getColumn();
-					boolean isData = address.getRow() > 3;
-					if (isData && score < 6) {
-						data.putData(score, cell.getStringCellValue());
+					int columnNum = address.getColumn();
+					int rowNum = address.getRow();
+					if (rowNum > 3 && columnNum < 6) {
+						data.putData(columnNum, cell.getStringCellValue());
 					}
 				}
 			}
