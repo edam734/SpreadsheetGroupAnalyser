@@ -23,6 +23,7 @@ public class Main {
 
 		SpreadsheetAnalyser analyser = new SpreadsheetAnalyser(workbook);
 		ScoreMap dataMap = analyser.getGroupingDataFromSheet(0);
+
 		Scanner sc = new Scanner(System.in);
 		boolean success = false;
 		do {
@@ -46,15 +47,14 @@ public class Main {
 				} else {
 					System.out.println("WARN: unknown option. Try again.");
 				}
-			} catch (
-
-			InputMismatchException e) {
+			} catch (InputMismatchException e) {
 				System.out.println("WARN: must be an avaiable option. Try again.");
 				sc.nextLine();
 			}
 		} while (!success);
-		
+
 		sc.close();
+		System.out.println("= Program closed =");
 	}
 
 }
