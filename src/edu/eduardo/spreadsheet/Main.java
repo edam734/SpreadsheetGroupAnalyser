@@ -28,7 +28,8 @@ public class Main {
 		boolean success = false;
 		do {
 			System.out.println("1- search");
-			System.out.println("2- exit");
+			System.out.println("2- print category");
+			System.out.println("3- exit");
 			try {
 				int op = sc.nextInt();
 				sc.nextLine();
@@ -43,6 +44,16 @@ public class Main {
 						success = true;
 					}
 				} else if (op == 2) {
+					System.out.println("1 - Mau");
+					System.out.println("2 - Meh");
+					System.out.println("3 - Bom");
+					System.out.println("4 - Ótimo");
+					System.out.println("5 - Actrizes");
+					System.out.println("6 - Produtores");
+					int key = sc.nextInt();
+					sc.nextLine();
+					System.out.println(dataMap.getGroup(key - 1));
+				} else if (op == 3) {
 					break;
 				} else {
 					System.out.println("WARN: unknown option. Try again.");

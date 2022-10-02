@@ -69,7 +69,7 @@ public class SpreadsheetAnalyser {
 
 		public void putData(Integer score, String value) {
 			data.computeIfPresent(score, (key, val) -> {
-				val.add(value);
+				val.add(value.trim());
 				return val;
 			});
 		}
@@ -96,9 +96,12 @@ public class SpreadsheetAnalyser {
 			return Category.values()[index].getStr();
 		}
 
-		@Override
-		public String toString() {
-			return "ScoreMap [data=" + data + "]";
+		public String getGroup(int key) {
+			if (key >= 6) {
+				return "";
+			}
+			return new StringBuilder().append(getCategory(key)).append(" = ").append(data.get(key).toString())
+					.toString();
 		}
 
 		public enum Category {
@@ -125,7 +128,11 @@ public class SpreadsheetAnalyser {
 			public String getStr() {
 				return str;
 			}
+		}
 
+		@Override
+		public String toString() {
+			return "ScoreMap [data=" + data + "]";
 		}
 
 	}
