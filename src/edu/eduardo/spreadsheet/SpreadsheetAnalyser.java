@@ -72,7 +72,6 @@ public class SpreadsheetAnalyser {
 				val.add(value);
 				return val;
 			});
-
 		}
 
 		public String getData(String value) {
